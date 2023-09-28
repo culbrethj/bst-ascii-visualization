@@ -33,7 +33,7 @@ TEST_CASE("BST Visualize", "[flag]"){
 	system("Pause");
 }
 ```
-Adding a system pause helps if you aren't in a terminal and click the exe directly<br>
+Adding a system pause helps if you click the exe directly instead of using a terminal<br>
 <br>
 What it looks like for AVL trees:
 ![Alt text](Example.jpg?raw=true)
