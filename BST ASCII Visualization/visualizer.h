@@ -1,16 +1,16 @@
 #pragma once
-#include "bst.h"
-#include "node.h"
+#include "Tree.h" // Change this to the file your tree class is in
 #include <string>
 #include <queue>
+#include <cmath>
 using namespace std;
 
 template <class T>
 class visualizer
 {
 
-	bst<T> tree_;
-	node<T>* tree_root_;
+	MyAVLTree tree_;
+	TreeNode* tree_root_;
 	int tree_height_;
 	int tree_nodes_;
 	string** values_;
@@ -23,14 +23,14 @@ class visualizer
 	int space_length_;
 	int space_shift_factor_;
 
-	queue<node<T>*> breadth_first_search();
-	int get_tree_height(node<T>*) const;
+	queue<TreeNode*> breadth_first_search();
+	int get_tree_height(TreeNode*) const;
 	int get_nodes_count(int) const;
 	int get_subtree_width(int) const;
 
 public:
 
-	explicit visualizer(bst<T>, int = -1, int = -1);
+	explicit visualizer(MyAVLTree, int = -1, int = -1);
 	~visualizer() = default;
 	void visualize() const;
 

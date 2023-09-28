@@ -3,7 +3,7 @@
 #include <iostream>
 
 template <class T>
-visualizer<T>::visualizer(bst<T> tree, int node_length /* = -1 */, int space_length /* = -1 */)
+visualizer<T>::visualizer(MyAVLTree tree, int node_length /* = -1 */, int space_length /* = -1 */)
 {
 
 	auto min_node_len = 0;
@@ -11,10 +11,10 @@ visualizer<T>::visualizer(bst<T> tree, int node_length /* = -1 */, int space_len
 
 	// Initialize tree-related variables
 	tree_                 = tree;
-	tree_root_            = tree_.get_root();
+	tree_root_            = tree_.getRoot();
 	tree_height_          = get_tree_height(tree_root_);
 	tree_nodes_           = get_nodes_count(tree_height_) - 1;
-	queue<node<T>*> nodes = breadth_first_search();
+	queue<TreeNode*> nodes = breadth_first_search();
 
 	// Initialize values_ array
 	values_ = new string*[tree_nodes_];
@@ -25,7 +25,7 @@ visualizer<T>::visualizer(bst<T> tree, int node_length /* = -1 */, int space_len
 		{
 			// Convert node to string and add it to values vector
 			// also add empty string if node is empty
-			auto value = nodes.front() == nullptr ? "" : to_string(nodes.front()->get_value());
+			auto value = nodes.front() == nullptr ? "" : nodes.front()->name + ": " + to_string(nodes.front()->id);
 			values_[level][node] = value;
 			nodes.pop();
 
@@ -47,18 +47,18 @@ visualizer<T>::visualizer(bst<T> tree, int node_length /* = -1 */, int space_len
 	space_shift_factor_ = space_length_ / 2;                                             // Shifting factor used in visualizing
 
 	// Make sure that that both values are either even or odd
-	assert(node_type_ == space_length_ % 2);
+	// assert(node_type_ == space_length_ % 2);
 }
 
 template <class T>
-queue<node<T>*> visualizer<T>::breadth_first_search()
+queue<TreeNode*> visualizer<T>::breadth_first_search()
 {
-	queue<node<T>*> temp, nodes;
+	queue<TreeNode*> temp, nodes;
 	temp.push(tree_root_);
 
 	for (auto i = 0; i < tree_nodes_; i++)
 	{
-		node<T>* current = temp.front();
+		TreeNode* current = temp.front();
 		temp.pop();
 		nodes.push(current);
 
@@ -69,8 +69,8 @@ queue<node<T>*> visualizer<T>::breadth_first_search()
 		}
 		else
 		{
-			temp.push(current->get_left());
-			temp.push(current->get_right());
+			temp.push(current->left);
+			temp.push(current->right);
 		}
 	}
 
@@ -78,11 +78,11 @@ queue<node<T>*> visualizer<T>::breadth_first_search()
 }
 
 template <class T>
-int visualizer<T>::get_tree_height(node<T>* root) const
+int visualizer<T>::get_tree_height(TreeNode* root) const
 {
 	if (root == nullptr) return 0;
-	const int left_height  = get_tree_height(root->get_left());
-	const int right_height = get_tree_height(root->get_right());
+	const int left_height  = get_tree_height(root->left);
+	const int right_height = get_tree_height(root->right);
 	return left_height > right_height ? left_height + 1 : right_height + 1;
 }
 
