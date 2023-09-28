@@ -27,6 +27,8 @@ TEST_CASE("BST Visualize", "[flag]"){
 	cout << endl << endl;
 }
 ```
+What it looks like for AVL trees:
+![Alt text](Example.jpg?raw=true)
 
 This program helps to Visualize [**Binary Search Trees**](https://en.wikipedia.org/wiki/Binary_search_tree) using **ASCII** characters with the [**Adaptive Node Length with Fixed Space Length Algorithm**](https://github.com/YoussefRaafatNasry/bst-ascii-visualization/blob/master/STUDY_CASE.md#iii-adaptive-node-length-with-fixed-space-length-algorithm) — _see my [**Study Case**](https://github.com/YoussefRaafatNasry/bst-ascii-visualization/blob/master/STUDY_CASE.md) for more info_.
 
