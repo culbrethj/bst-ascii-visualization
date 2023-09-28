@@ -121,7 +121,7 @@ void visualizer<T>::visualize() const
 		for (auto node = 0; node < nodes_count; node++)
 		{
 			const auto node_value = values_[level][node].empty() ? empty_node_ : values_[level][node];
-			cout << setw(node_length_) << setfill('0') << node_value;
+			cout << setw(node_length_) << setfill(' ') << node_value;
 			cout << string(nodes_spacing * (node != last_node), ' ');
 		}
 

@@ -5,7 +5,7 @@
 - Your tree class is named MyAVLTree
 - Your node class is named TreeNode
 - Your node's right and left pointers are named "right" and "left"
-- Your node's data is named "id" and "name"
+- Your node's data id named "id" and "name"
 - For this to work correctly, do a search and replace on these files to make the names consistent with your tree class
 2. You must add a public get method to the MyAVLTree class that returns your tree's root
 ```cpp
@@ -26,7 +26,6 @@ TEST_CASE("BST Visualize", "[flag]"){
 	v.visualize();
 	cout << endl << endl;
 }
-
 ```
 
 This program helps to Visualize [**Binary Search Trees**](https://en.wikipedia.org/wiki/Binary_search_tree) using **ASCII** characters with the [**Adaptive Node Length with Fixed Space Length Algorithm**](https://github.com/YoussefRaafatNasry/bst-ascii-visualization/blob/master/STUDY_CASE.md#iii-adaptive-node-length-with-fixed-space-length-algorithm) — _see my [**Study Case**](https://github.com/YoussefRaafatNasry/bst-ascii-visualization/blob/master/STUDY_CASE.md) for more info_.
