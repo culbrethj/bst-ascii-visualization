@@ -1,6 +1,7 @@
 # BST ASCII Visualization
 
-** For COP3530 AVL Trees:
+** For COP3530 AVL Trees **
+Note that this only works well for a few layers, it will break for larger trees
 1. These files are dependent on naming conventions and assume that:
 - Your tree class is named MyAVLTree
 - Your node class is named TreeNode
