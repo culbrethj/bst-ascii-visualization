@@ -1,14 +1,18 @@
 # BST ASCII Visualization
 
 ** For COP3530 AVL Trees ** <br>
-Note that this only works well for a few layers, it will break for larger trees
-1. These files are dependent on naming conventions and assume that:
+Note that this only works well for a few layers, it will break for larger trees <br>
+1. Add visualizer.cpp and visualizer.h to your src folder; include it in main.cpp
+```cpp
+#include "visualizer.cpp"
+```
+2. These files are dependent on naming conventions and assume that:
 - Your tree class is named MyAVLTree
 - Your node class is named TreeNode
 - Your node's right and left pointers are named "right" and "left"
 - Your node's data is named "id" and "name"
 - For this to work correctly, do a search and replace on these files to make the names consistent with your tree class
-2. You must add a public get method to the MyAVLTree class that returns your tree's root
+3. You must add a public get method to the MyAVLTree class that returns your tree's root
 ```cpp
 public:
 TreeNode *getRoot(){return this->root;}
